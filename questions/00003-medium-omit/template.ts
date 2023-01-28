@@ -1,1 +1,3 @@
-type MyOmit<T, K> = any
+type MyOmit<T, K> = {
+  [F in keyof T as F extends K ? never : F]: T[F]
+}
